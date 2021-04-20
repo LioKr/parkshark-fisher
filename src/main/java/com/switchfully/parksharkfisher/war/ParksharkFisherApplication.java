@@ -1,4 +1,4 @@
-package com.switchfully.parksharkfisher;
+package com.switchfully.parksharkfisher.war;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

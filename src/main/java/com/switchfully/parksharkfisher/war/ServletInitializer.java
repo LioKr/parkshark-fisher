@@ -1,5 +1,6 @@
-package com.switchfully.parksharkfisher;
+package com.switchfully.parksharkfisher.war;
 
+import com.switchfully.parksharkfisher.war.ParksharkFisherApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
