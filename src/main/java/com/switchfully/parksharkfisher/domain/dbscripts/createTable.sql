@@ -1,7 +1,7 @@
 drop table if exists divisions cascade;
 create table divisions
 (
-    id varchar(60) not null
+    id uuid not null
         constraint divisions_pk
             primary key,
     division_name varchar(60) not null,
