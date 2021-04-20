@@ -1,5 +1,6 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
+
 import java.util.UUID;
 
 public class Division {
