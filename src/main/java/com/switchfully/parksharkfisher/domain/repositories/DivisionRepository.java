@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface DivisionRepository extends JpaRepository<Division, UUID> {
 
 
+    Division getDivisionByDirector(String director);
 }
