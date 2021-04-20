@@ -1,9 +1,9 @@
-package com.switchfully.parksharkfisher.war;
+package com.switchfully.parksharkfisher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.switchfully.parksharkfisher")
 public class ParksharkFisherApplication {
 
     public static void main(String[] args) {

@@ -7,19 +7,20 @@ import com.switchfully.parksharkfisher.domain.entities.Division;
 import com.switchfully.parksharkfisher.service.DivisionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/divisions")
 public class DivisionController {
     private static final Logger logger = LoggerFactory.getLogger(DivisionController.class);
     private final DivisionService divisionService;
     private final DivisionMapper divisionMapper;
 
-
+    @Autowired
     public DivisionController(DivisionService divisionService, DivisionMapper divisionMapper) {
         this.divisionService = divisionService;
         this.divisionMapper = divisionMapper;
@@ -31,7 +32,6 @@ public class DivisionController {
         logger.info("Division Created: ");
         Division division = divisionMapper.toEntity(divisionDTOCreation);
         return divisionMapper.toDTO(divisionService.save(division));
-
     }
 
 }

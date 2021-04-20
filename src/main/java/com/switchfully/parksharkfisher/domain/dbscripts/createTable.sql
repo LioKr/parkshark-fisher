@@ -1,4 +1,4 @@
-drop table divisions if exists
+drop table if exists divisions cascade;
 create table divisions
 (
     id varchar(60) not null
