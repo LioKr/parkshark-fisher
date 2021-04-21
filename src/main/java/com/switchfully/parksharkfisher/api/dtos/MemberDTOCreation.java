@@ -9,6 +9,7 @@ public class MemberDTOCreation {
     private String firstname;
     private String lastname;
     private String phoneNumber;
+    private String mail;
     private Address address;
     private LicensePlate licensePlate;
     private LocalDate registrationDate;
@@ -28,6 +29,11 @@ public class MemberDTOCreation {
 
     public MemberDTOCreation setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public MemberDTOCreation setMail(String mail) {
+        this.mail = mail;
         return this;
     }
 
@@ -68,5 +74,9 @@ public class MemberDTOCreation {
 
     public LocalDate getRegistrationDate() {
         return registrationDate;
+    }
+
+    public String getMail() {
+        return mail;
     }
 }

@@ -17,6 +17,7 @@ public class MemberMapper {
                 memberDTOCreation.getFirstname(),
                 memberDTOCreation.getLastname(),
                 memberDTOCreation.getPhoneNumber(),
+                memberDTOCreation.getMail(),
                 memberDTOCreation.getAddress(),
                 memberDTOCreation.getLicensePlate(),
                 memberDTOCreation.getRegistrationDate()
@@ -30,6 +31,7 @@ public class MemberMapper {
                 .setFirstname(member.getFirstname())
                 .setLastname(member.getLastname())
                 .setPhoneNumber(member.getPhoneNumber())
+                .setMail(member.getMail())
                 .setAddress(member.getAddress())
                 .setLicensePlate(member.getLicensePlate())
                 .setRegistrationDate(member.getRegistrationDate());

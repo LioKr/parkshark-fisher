@@ -11,6 +11,7 @@ public class MemberDTO {
     private String firstname;
     private String lastname;
     private String phoneNumber;
+    private String mail;
     private Address address;
     private LicensePlate licensePlate;
     private LocalDate registrationDate;
@@ -35,6 +36,11 @@ public class MemberDTO {
 
     public MemberDTO setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public MemberDTO setMail(String mail) {
+        this.mail = mail;
         return this;
     }
 
