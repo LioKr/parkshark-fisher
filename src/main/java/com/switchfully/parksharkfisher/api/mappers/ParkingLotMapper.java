@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class ParkingLotMapper {
     private static final Logger logger = LoggerFactory.getLogger(ParkingLotMapper.class);
@@ -32,8 +35,11 @@ public class ParkingLotMapper {
                 .setId(parkingLot.getId())
                 .setContactPerson(parkingLot.getContactPerson())
                 .setMaxCapacity(parkingLot.getMaxCapacity());
+    }
 
-
+    public List<ParkingLotDTO> toDTOList(List<ParkingLot> parkingLotList){
+        logger.info("Mapping ParkingLotEntity to List of ParkingLotDTOs");
+        return parkingLotList.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
 }

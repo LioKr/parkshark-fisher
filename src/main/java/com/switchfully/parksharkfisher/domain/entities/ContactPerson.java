@@ -4,15 +4,31 @@ import java.util.UUID;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "contactpersons")
 public class ContactPerson {
+    @Id
+    @Column(name = "id")
     private UUID id;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
     private String lastName;
+    @Column(name = "mobilephone")
     private String mobilePhone;
+    @Column(name = "telephone")
     private String telephone;
+    @Column(name = "emailaddress")
     private String emailAdress;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id",referencedColumnName = "id")
     private Address address;
 
+
+    public ContactPerson() {
+    }
 
     public ContactPerson(String firstName, String lastName, String mobilePhone, String telephone, String emailAdress, Address address) {
         assertValidEmailAdress(emailAdress);
