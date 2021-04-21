@@ -15,7 +15,10 @@
     <name>parkshark-fisher</name>
     <description>Demo project for Parkshark by team fisher</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>15</java.version>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
