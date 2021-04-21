@@ -5,6 +5,8 @@ import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Transactional
 @Service
 public class ParkingLotServiceImplementation implements ParkingLotService {
@@ -12,6 +14,12 @@ public class ParkingLotServiceImplementation implements ParkingLotService {
 
     public ParkingLotServiceImplementation(ParkingLotRepository parkingLotRepository) {
         this.parkingLotRepository = parkingLotRepository;
+    }
+
+    @Override
+    public List<ParkingLot> getAll() {
+        return parkingLotRepository.findAll();
+
     }
 
     @Override

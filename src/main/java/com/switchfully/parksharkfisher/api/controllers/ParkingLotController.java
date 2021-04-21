@@ -1,6 +1,7 @@
 package com.switchfully.parksharkfisher.api.controllers;
 
 
+
 import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTO;
 import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.ParkingLotMapper;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/parkinglot")
@@ -34,5 +37,13 @@ public class ParkingLotController {
         return parkingLotMapper.toDTO(parkingLotService.save(parkingLot));
 
     }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<ParkingLotDTO> getAllParkingLots(){
+        logger.info("Query for all parkinglots: ");
+        return parkingLotMapper.toDTOList(parkingLotService.getAll());
+    }
+
 
 }

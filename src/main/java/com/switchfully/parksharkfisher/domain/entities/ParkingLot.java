@@ -1,13 +1,28 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "parkinglots")
 public class ParkingLot {
     private static int idCounter = 1;
+    @Id
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "maxcapacity")
     private int maxCapacity;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contactperson_id", referencedColumnName = "id")
     private ContactPerson contactPerson;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id",referencedColumnName = "id")
     private Address address;
+    @Column(name = "price")
     private long price;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "category")
     private Category category;
 
     public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson, Address address, long price, Category category) {
@@ -19,6 +34,9 @@ public class ParkingLot {
         this.address = address;
         this.price = price;
         this.category = category;
+    }
+
+    public ParkingLot() {
     }
 
     public Category getCategory() {
