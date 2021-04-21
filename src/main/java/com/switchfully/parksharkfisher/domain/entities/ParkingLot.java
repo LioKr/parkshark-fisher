@@ -1,6 +1,7 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
 public class ParkingLot {
+    private static int idCounter = 1;
     private int id;
     private String name;
     private int maxCapacity;
@@ -10,7 +11,8 @@ public class ParkingLot {
     private Category category;
 
     public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson, Address address, long price, Category category) {
-        //this.id=id;
+        this.id = idCounter;
+        idCounter++;
         this.name = name;
         this.maxCapacity = maxCapacity;
         this.contactPerson = contactPerson;
@@ -26,14 +28,14 @@ public class ParkingLot {
     public void setCategory(Category category) {
         this.category = category;
     }
-    /*
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }  */
+    }
 
     public String getName() {
         return name;

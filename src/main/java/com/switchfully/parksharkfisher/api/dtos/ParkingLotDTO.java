@@ -21,55 +21,74 @@ public class ParkingLotDTO {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public ParkingLotDTO setId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public ParkingLotDTO setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public ParkingLotDTO setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        return this;
+    }
+
+    public ParkingLotDTO setContactPerson(ContactPerson contactPerson) {
+        this.contactPerson = contactPerson;
+        return this;
+    }
+
+    public ParkingLotDTO setAddress(Address address) {
+        this.address = address;
+        return this;
+    }
+
+    public ParkingLotDTO setPrice(long price) {
+        this.price = price;
+        return this;
+    }
+
+    public ParkingLotDTO setCategory(Category category) {
         this.category = category;
+        return this;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public int getMaxCapacity() {
         return maxCapacity;
     }
 
-    public void setMaxCapacity(int maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
+
 
     public ContactPerson getContactPerson() {
         return contactPerson;
     }
 
-    public void setContactPerson(ContactPerson contactPerson) {
-        this.contactPerson = contactPerson;
-    }
+
 
     public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+
 
     public long getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
-        this.price = price;
-    }
+
 }

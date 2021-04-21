@@ -4,6 +4,8 @@ package com.switchfully.parksharkfisher.api.controllers;
 import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTO;
 import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.ParkingLotMapper;
+import com.switchfully.parksharkfisher.domain.entities.ParkingLot;
+import com.switchfully.parksharkfisher.service.ParkingLotService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,14 @@ public class ParkingLotController {
         this.parkingLotService = parkingLotService;
         this.parkingLotMapper = parkingLotMapper;
     }
-@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public ParkingLotDTO createParkingLot(@RequestBody ParkingLotDTOCreation parkingLotDTOCreation){
+    public ParkingLotDTO createParkingLot(@RequestBody ParkingLotDTOCreation parkingLotDTOCreation) {
+        logger.info("ParkingLot Created");
+        ParkingLot parkingLot = parkingLotMapper.toEntity(parkingLotDTOCreation);
+        return parkingLotMapper.toDTO(parkingLotService.save(parkingLot));
 
-
-}
+    }
 
 }

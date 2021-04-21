@@ -81,7 +81,7 @@ public class ContactPerson {
         this.address = address;
     }
 
-    public static void assertValidEmailAdress(String emailAdress) {
+    private static void assertValidEmailAdress(String emailAdress) {
         if (emailAdress == null) {
             throw new IllegalArgumentException("Email adress is null");
         }
