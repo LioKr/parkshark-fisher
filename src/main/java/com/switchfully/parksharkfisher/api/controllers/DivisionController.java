@@ -15,7 +15,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/divisions")
-public class DivisionController {
+public class
+DivisionController {
     private static final Logger logger = LoggerFactory.getLogger(DivisionController.class);
     private final DivisionService divisionService;
     private final DivisionMapper divisionMapper;
