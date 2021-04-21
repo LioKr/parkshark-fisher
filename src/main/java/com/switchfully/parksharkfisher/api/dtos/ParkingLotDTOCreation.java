@@ -20,47 +20,62 @@ public class ParkingLotDTOCreation {
         return category;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public int getMaxCapacity() {
         return maxCapacity;
     }
 
-    public void setMaxCapacity(int maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
 
     public ContactPerson getContactPerson() {
         return contactPerson;
     }
 
-    public void setContactPerson(ContactPerson contactPerson) {
-        this.contactPerson = contactPerson;
-    }
+
 
     public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+
 
     public long getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public ParkingLotDTOCreation setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public ParkingLotDTOCreation setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        return this;
+    }
+
+    public ParkingLotDTOCreation setContactPerson(ContactPerson contactPerson) {
+        this.contactPerson = contactPerson;
+        return this;
+    }
+
+    public ParkingLotDTOCreation setAddress(Address address) {
+        this.address = address;
+        return this;
+    }
+
+    public ParkingLotDTOCreation setPrice(long price) {
         this.price = price;
+        return this;
+    }
+
+    public ParkingLotDTOCreation setCategory(Category category) {
+        this.category = category;
+        return this;
     }
 }
