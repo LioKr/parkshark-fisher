@@ -10,26 +10,21 @@ import java.util.UUID;
 public class Member {
     @Id
     @Column(name = "id")
-    private final UUID id;
+    private UUID id;
     @Column(name = "firstname")
-    private final String firstname;
+    private String firstname;
     @Column(name = "lastname")
-    private final String lastname;
+    private String lastname;
     @Column(name = "phone_number")
-    private final String phoneNumber;
-
-    @ManyToOne()
-    @JoinColumn(name = "id")
-    private final Address address;
-
-
+    private String phoneNumber;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "address_id")
+    private Address address;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "plate_number")
-    private final LicensePlate licensePlate;
-
-
-    @Column(name = "registrationDate")
-    private final LocalDate registrationDate;
+    @JoinColumn(name = "license_plate_platenumber", referencedColumnName = "plate_number")
+    private LicensePlate licensePlate;
+    @Column(name = "registration_date")
+    private LocalDate registrationDate;
 
     public Member(String firstname, String lastname, String phoneNumber, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
         this.id = UUID.randomUUID();
@@ -39,6 +34,9 @@ public class Member {
         this.address = address;
         this.licensePlate = licensePlate;
         this.registrationDate = registrationDate;
+    }
+
+    public Member() {
     }
 
     public UUID getId() {
