@@ -32,11 +32,12 @@ public class ParkingLotControlerIntegrationTest {
     @Autowired
     private ParkingLotRepository parkingLotRepository;
 
-   /* @Test
+    @Test
     void givenCorrectParameter_whenAddingParkingLot_thenOneMoreIsPresent_webTestClient() {
         //GIVEN
         WebTestClient testClient = WebTestClient.bindToServer().baseUrl("http://localhost:" + port).build();
-        Address address1 = new Address("Street", "2", "3200", "Leuven");
+        Address address1 = new Address("Street", "2", "3000", "Leuven");
+        Address address2 = new Address("Corner", "4", "3200", "Aarschot");
         ContactPerson person1 = new ContactPerson("Jos", "Peters", "04949494",
                 "4567891", "jos.peters@gmail.com", address1);
         ParkingLotDTOCreation parkingLotDTOCreation = new ParkingLotDTOCreation()
@@ -44,7 +45,7 @@ public class ParkingLotControlerIntegrationTest {
                 .setMaxCapacity(50)
                 .setPrice(5L)
                 .setCategory(Category.ABOVE_GROUND_BUILDING)
-                .setAddress(address1)
+                .setAddress(address2)
                 .setContactPerson(person1);
         //WHEN
         WebTestClient.ResponseSpec response = testClient.post().uri("/parkinglot")
@@ -55,6 +56,6 @@ public class ParkingLotControlerIntegrationTest {
         response.expectStatus().isCreated();
         assertThat(parkingLotRepository.findAll())
                 .contains(parkingLotRepository.getParkingLotsByName("parkingName"));
-    }*/
+    }
 
 }

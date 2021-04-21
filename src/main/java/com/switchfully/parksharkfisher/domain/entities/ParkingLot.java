@@ -1,6 +1,7 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "parkinglots")
@@ -93,5 +94,18 @@ public class ParkingLot {
 
     public void setPrice(long price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        final ParkingLot that = (ParkingLot) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
