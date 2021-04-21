@@ -14,7 +14,7 @@ create table address
         constraint address_pk
             primary key,
     streetname varchar(25),
-    number     varchar(5),
+    number     varchar(10),
     postalcode varchar(8),
     city       varchar(25)
 );
