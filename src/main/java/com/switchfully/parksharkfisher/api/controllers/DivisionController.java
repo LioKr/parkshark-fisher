@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping(path = "/divisions")
@@ -34,4 +36,10 @@ public class DivisionController {
         return divisionMapper.toDTO(divisionService.save(division));
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<DivisionDTO> getAllDivisions(){
+        logger.info("Query for all divisions: ");
+        return divisionMapper.toDTOList(divisionService.getAll());
+    }
 }
