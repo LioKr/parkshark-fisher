@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class DivisionMapper {
     private static final Logger logger = LoggerFactory.getLogger(DivisionMapper.class);
@@ -29,5 +32,9 @@ public class DivisionMapper {
 
     }
 
+    public List<DivisionDTO> toDTOList(List<Division> divisionList) {
+        logger.info("Mapping Division Entity to List of DivisionDTO's");
+        return divisionList.stream().map(this::toDTO).collect(Collectors.toList());
+    }
 
 }
