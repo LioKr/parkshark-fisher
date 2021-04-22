@@ -1,11 +1,11 @@
-package com.switchfully.parksharkfisher.api.controllers;
+package com.switchfully.parksharkfisher.api.controllers.parkinglot;
 
 import com.switchfully.parksharkfisher.api.MyTestConfiguration;
-import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.parkinglot.ParkingLotDTOCreation;
 import com.switchfully.parksharkfisher.domain.entities.Address;
-import com.switchfully.parksharkfisher.domain.entities.Category;
-import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
 import com.switchfully.parksharkfisher.domain.entities.Division;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.Category;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ContactPerson;
 import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

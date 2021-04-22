@@ -1,6 +1,6 @@
 package com.switchfully.parksharkfisher.service;
 
-import com.switchfully.parksharkfisher.domain.entities.Member;
+import com.switchfully.parksharkfisher.domain.entities.member.Member;
 import com.switchfully.parksharkfisher.domain.repositories.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

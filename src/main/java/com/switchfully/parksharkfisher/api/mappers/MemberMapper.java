@@ -1,8 +1,8 @@
 package com.switchfully.parksharkfisher.api.mappers;
 
-import com.switchfully.parksharkfisher.api.dtos.MemberDTO;
-import com.switchfully.parksharkfisher.api.dtos.MemberDTOCreation;
-import com.switchfully.parksharkfisher.domain.entities.Member;
+import com.switchfully.parksharkfisher.api.dtos.member.MemberDTO;
+import com.switchfully.parksharkfisher.api.dtos.member.MemberDTOCreation;
+import com.switchfully.parksharkfisher.domain.entities.member.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

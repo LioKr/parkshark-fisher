@@ -2,10 +2,10 @@ package com.switchfully.parksharkfisher.api.controllers;
 
 
 
-import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTO;
-import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.parkinglot.ParkingLotDTO;
+import com.switchfully.parksharkfisher.api.dtos.parkinglot.ParkingLotDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.ParkingLotMapper;
-import com.switchfully.parksharkfisher.domain.entities.ParkingLot;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ParkingLot;
 import com.switchfully.parksharkfisher.service.ParkingLotService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

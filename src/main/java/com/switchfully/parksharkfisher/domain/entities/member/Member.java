@@ -1,6 +1,7 @@
-package com.switchfully.parksharkfisher.domain.entities;
+package com.switchfully.parksharkfisher.domain.entities.member;
 
 
+import com.switchfully.parksharkfisher.domain.entities.Address;
 import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
 import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
 

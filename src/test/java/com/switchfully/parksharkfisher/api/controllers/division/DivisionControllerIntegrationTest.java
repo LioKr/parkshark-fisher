@@ -1,7 +1,7 @@
-package com.switchfully.parksharkfisher.api.controllers;
+package com.switchfully.parksharkfisher.api.controllers.division;
 
 import com.switchfully.parksharkfisher.api.MyTestConfiguration;
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.division.DivisionDTOCreation;
 import com.switchfully.parksharkfisher.domain.repositories.DivisionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

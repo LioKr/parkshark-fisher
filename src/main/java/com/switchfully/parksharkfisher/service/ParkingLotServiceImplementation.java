@@ -1,6 +1,6 @@
 package com.switchfully.parksharkfisher.service;
 
-import com.switchfully.parksharkfisher.domain.entities.ParkingLot;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ParkingLot;
 import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,8 +1,8 @@
-package com.switchfully.parksharkfisher.api.dtos;
+package com.switchfully.parksharkfisher.api.dtos.member;
 
 import com.switchfully.parksharkfisher.domain.entities.Address;
-import com.switchfully.parksharkfisher.domain.entities.LicensePlate;
-import com.switchfully.parksharkfisher.domain.entities.Membership;
+import com.switchfully.parksharkfisher.domain.entities.member.LicensePlate;
+import com.switchfully.parksharkfisher.domain.entities.member.Membership;
 
 import java.time.LocalDate;
 

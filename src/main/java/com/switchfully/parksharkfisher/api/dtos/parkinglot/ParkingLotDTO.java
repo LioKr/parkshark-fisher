@@ -1,9 +1,9 @@
-package com.switchfully.parksharkfisher.api.dtos;
+package com.switchfully.parksharkfisher.api.dtos.parkinglot;
 
 import com.switchfully.parksharkfisher.domain.entities.Address;
-import com.switchfully.parksharkfisher.domain.entities.Category;
-import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
 import com.switchfully.parksharkfisher.domain.entities.Division;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.Category;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ContactPerson;
 
 public class ParkingLotDTO {
 

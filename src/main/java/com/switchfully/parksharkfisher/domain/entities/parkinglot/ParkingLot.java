@@ -1,4 +1,7 @@
-package com.switchfully.parksharkfisher.domain.entities;
+package com.switchfully.parksharkfisher.domain.entities.parkinglot;
+
+import com.switchfully.parksharkfisher.domain.entities.Address;
+import com.switchfully.parksharkfisher.domain.entities.Division;
 
 import javax.persistence.*;
 import java.util.Objects;

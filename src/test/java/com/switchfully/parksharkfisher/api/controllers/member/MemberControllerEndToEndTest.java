@@ -1,10 +1,10 @@
-package com.switchfully.parksharkfisher.api.controllers;
+package com.switchfully.parksharkfisher.api.controllers.member;
 
 import com.switchfully.parksharkfisher.api.MyTestConfiguration;
-import com.switchfully.parksharkfisher.api.dtos.MemberDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.member.MemberDTOCreation;
 import com.switchfully.parksharkfisher.domain.entities.Address;
-import com.switchfully.parksharkfisher.domain.entities.LicensePlate;
-import com.switchfully.parksharkfisher.domain.entities.Membership;
+import com.switchfully.parksharkfisher.domain.entities.member.LicensePlate;
+import com.switchfully.parksharkfisher.domain.entities.member.Membership;
 import com.switchfully.parksharkfisher.domain.repositories.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

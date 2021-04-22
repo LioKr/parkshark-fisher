@@ -1,8 +1,11 @@
-package com.switchfully.parksharkfisher.api.dtos;
+package com.switchfully.parksharkfisher.api.dtos.parkinglot;
 
 import com.switchfully.parksharkfisher.domain.entities.Address;
 
-public class ContactPersonDTOCreation {
+import java.util.UUID;
+
+public class ContactPersonDTO {
+    private UUID id;
     private String firstName;
     private String lastName;
     private String mobilePhone;
@@ -10,7 +13,15 @@ public class ContactPersonDTOCreation {
     private String emailAdress;
     private Address address;
 
-    public ContactPersonDTOCreation() {
+    public ContactPersonDTO() {
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getFirstName() {

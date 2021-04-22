@@ -1,6 +1,10 @@
 package com.switchfully.parksharkfisher.service;
 
-import com.switchfully.parksharkfisher.domain.entities.*;
+import com.switchfully.parksharkfisher.domain.entities.Address;
+import com.switchfully.parksharkfisher.domain.entities.Division;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.Category;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ContactPerson;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ParkingLot;
 import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.switchfully.parksharkfisher.api.dtos;
+package com.switchfully.parksharkfisher.api.dtos.division;
 
 public class DivisionDTOCreation {
     private String divisionName;

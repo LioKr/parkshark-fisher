@@ -1,7 +1,7 @@
 package com.switchfully.parksharkfisher.api.mappers;
 
-import com.switchfully.parksharkfisher.api.dtos.ContactPersonDTOCreation;
-import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
+import com.switchfully.parksharkfisher.api.dtos.parkinglot.ContactPersonDTOCreation;
+import com.switchfully.parksharkfisher.domain.entities.parkinglot.ContactPerson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
