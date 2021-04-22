@@ -1,13 +1,11 @@
 package com.switchfully.parksharkfisher.api.controllers;
 
 import com.switchfully.parksharkfisher.api.MyTestConfiguration;
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTOCreation;
 import com.switchfully.parksharkfisher.api.dtos.ParkingLotDTOCreation;
 import com.switchfully.parksharkfisher.domain.entities.Address;
 import com.switchfully.parksharkfisher.domain.entities.Category;
 import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
 import com.switchfully.parksharkfisher.domain.entities.Division;
-import com.switchfully.parksharkfisher.domain.repositories.DivisionRepository;
 import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,9 +49,9 @@ public class ParkingLotControlerIntegrationTest {
                 .setContactPerson(person1)
                 .setDivision(division1);
         //WHEN
-        WebTestClient.ResponseSpec response = testClient.post().uri("/parkinglot")
+        WebTestClient.ResponseSpec response = testClient.post().uri("/parkinglots")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(Mono.just(parkingLotDTOCreation),ParkingLotDTOCreation.class)
+                .body(Mono.just(parkingLotDTOCreation), ParkingLotDTOCreation.class)
                 .exchange();
         //THEN
         response.expectStatus().isCreated();
