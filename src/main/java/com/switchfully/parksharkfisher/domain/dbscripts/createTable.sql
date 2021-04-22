@@ -8,6 +8,8 @@ create table divisions
     original_name varchar(60),
     director      varchar(60) not null
 );
+
+
 create table address
 (
     id         uuid
@@ -18,6 +20,8 @@ create table address
     postalcode varchar(8),
     city       varchar(25)
 );
+
+
 create table contactpersons
 (
     id           uuid
@@ -33,24 +37,26 @@ create table contactpersons
         foreign key (address_id) references address (id)
 );
 
+
 create table parkinglots
 (
-    id               integer not null
-        constraint parkinglots_pk
+    id               integer default nextval('parkinglot_seq'::regclass) not null
+        constraint parkinglots_pkey
             primary key,
-    name             varchar(25),
+    category         varchar(255),
     maxcapacity      integer,
-    contactperson_id uuid
-        constraint parkinglots_contactpersons_id_fk
-            references contactpersons,
-    address_id       uuid
-        constraint parkinglots_address_id_fk
-            references address,
+    name             varchar(255),
     price            bigint,
-    category         text,
-    division_id      uuid not null
-        constraint parkinglots_divisions_id_fk
-            references divisions(id)
+    spots_in_use     integer,
+    address_id       uuid
+        constraint fk3b6fo74f3eflrpaafoeyli5qo
+            references address,
+    contactperson_id uuid
+        constraint fkgmoe8jbe1g28cxrj15c7qecko
+            references contactpersons,
+    division_id      uuid                                                not null
+        constraint fkbfjsvqey0m0k5ssx2i2m3o3h6
+            references divisions
 );
 
 
@@ -80,5 +86,21 @@ create table members
         constraint members_address_id_fk
             references address,
     membership                text
+);
+
+
+create table allocations
+(
+    id            bigint default nextval('allocations_seq'::regclass) not null
+        constraint allocations_pkey
+            primary key,
+    start_time    date,
+    stop_time     date,
+    member_id     uuid                                                not null
+        constraint allocations_member_id_fk
+            references members,
+    parkinglot_id integer                                             not null
+        constraint allocations_parkinglot_id_fk
+            references parkinglots
 );
 
