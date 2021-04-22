@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Import(MyTestConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-class DivisionControllerIntegrationTest {
+class DivisionControllerEndToEndTest {
     @LocalServerPort
     private int port;
     @Autowired
