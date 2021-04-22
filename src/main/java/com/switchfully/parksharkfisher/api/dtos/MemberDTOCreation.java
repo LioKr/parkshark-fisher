@@ -2,6 +2,7 @@ package com.switchfully.parksharkfisher.api.dtos;
 
 import com.switchfully.parksharkfisher.domain.entities.Address;
 import com.switchfully.parksharkfisher.domain.entities.LicensePlate;
+import com.switchfully.parksharkfisher.domain.entities.Membership;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ public class MemberDTOCreation {
     private Address address;
     private LicensePlate licensePlate;
     private LocalDate registrationDate;
+    private Membership membership;
 
     public MemberDTOCreation() {
     }
@@ -52,6 +54,11 @@ public class MemberDTOCreation {
         return this;
     }
 
+    public MemberDTOCreation setMembership(Membership membership) {
+        this.membership = membership;
+        return this;
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -78,5 +85,9 @@ public class MemberDTOCreation {
 
     public String getMail() {
         return mail;
+    }
+
+    public Membership getMembership() {
+        return membership;
     }
 }

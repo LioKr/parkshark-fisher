@@ -1,12 +1,12 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
 
-
 import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
 import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -31,9 +31,15 @@ public class Member {
     private LicensePlate licensePlate;
     @Column(name = "registration_date")
     private LocalDate registrationDate;
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "membership")
+    private Membership membership;
 
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
+        new Member(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate, Membership.BRONZE);
+    }
+
+    public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate, Membership membership) {
         if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
             throw new IllegalArgumentException("Wrong argument provided");
         }
@@ -45,6 +51,7 @@ public class Member {
         this.address = address;
         this.licensePlate = licensePlate;
         this.registrationDate = registrationDate;
+        this.membership = membership;
     }
 
     public Member() {
@@ -98,5 +105,22 @@ public class Member {
 
     public LocalDate getRegistrationDate() {
         return registrationDate;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return Objects.equals(id, member.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -20,7 +20,8 @@ public class MemberMapper {
                 memberDTOCreation.getMail(),
                 memberDTOCreation.getAddress(),
                 memberDTOCreation.getLicensePlate(),
-                memberDTOCreation.getRegistrationDate()
+                memberDTOCreation.getRegistrationDate(),
+                memberDTOCreation.getMembership()
         );
     }
 
@@ -34,6 +35,8 @@ public class MemberMapper {
                 .setMail(member.getMail())
                 .setAddress(member.getAddress())
                 .setLicensePlate(member.getLicensePlate())
-                .setRegistrationDate(member.getRegistrationDate());
+                .setRegistrationDate(member.getRegistrationDate())
+                .setMembership(member.getMembership());
+
     }
 }
