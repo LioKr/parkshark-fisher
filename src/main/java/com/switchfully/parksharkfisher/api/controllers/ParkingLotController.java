@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/parkinglot")
+@RequestMapping(path = "/parkinglots")
 public class ParkingLotController {
     private static final Logger logger = LoggerFactory.getLogger(ParkingLotController.class);
     private final ParkingLotService parkingLotService;
