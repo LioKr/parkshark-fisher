@@ -1,12 +1,11 @@
-package com.switchfully.parksharkfisher.domain.entities;
+package com.switchfully.parksharkfisher.domain.entities.parkinglot;
 
-import java.util.UUID;
-
+import com.switchfully.parksharkfisher.domain.entities.Address;
 import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
 import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
-import org.apache.commons.validator.routines.EmailValidator;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "contactpersons")

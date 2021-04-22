@@ -1,9 +1,9 @@
 package com.switchfully.parksharkfisher.api.controllers;
 
-import com.switchfully.parksharkfisher.api.dtos.MemberDTO;
-import com.switchfully.parksharkfisher.api.dtos.MemberDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.member.MemberDTO;
+import com.switchfully.parksharkfisher.api.dtos.member.MemberDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.MemberMapper;
-import com.switchfully.parksharkfisher.domain.entities.Member;
+import com.switchfully.parksharkfisher.domain.entities.member.Member;
 import com.switchfully.parksharkfisher.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

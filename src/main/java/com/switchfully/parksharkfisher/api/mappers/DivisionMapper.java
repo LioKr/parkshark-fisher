@@ -1,7 +1,7 @@
 package com.switchfully.parksharkfisher.api.mappers;
 
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTO;
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.division.DivisionDTO;
+import com.switchfully.parksharkfisher.api.dtos.division.DivisionDTOCreation;
 import com.switchfully.parksharkfisher.domain.entities.Division;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

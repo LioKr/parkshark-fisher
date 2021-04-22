@@ -1,4 +1,4 @@
-package com.switchfully.parksharkfisher.domain.entities;
+package com.switchfully.parksharkfisher.domain.entities.member;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

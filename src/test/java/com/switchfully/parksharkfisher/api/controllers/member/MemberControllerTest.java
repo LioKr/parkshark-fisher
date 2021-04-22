@@ -1,5 +1,6 @@
-package com.switchfully.parksharkfisher.api.controllers;
+package com.switchfully.parksharkfisher.api.controllers.member;
 
+import com.switchfully.parksharkfisher.api.controllers.MemberController;
 import com.switchfully.parksharkfisher.api.mappers.MemberMapper;
 import com.switchfully.parksharkfisher.service.MemberService;
 import org.junit.jupiter.api.Test;

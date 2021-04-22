@@ -1,7 +1,7 @@
 package com.switchfully.parksharkfisher.api.controllers;
 
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTO;
-import com.switchfully.parksharkfisher.api.dtos.DivisionDTOCreation;
+import com.switchfully.parksharkfisher.api.dtos.division.DivisionDTO;
+import com.switchfully.parksharkfisher.api.dtos.division.DivisionDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.DivisionMapper;
 import com.switchfully.parksharkfisher.domain.entities.Division;
 import com.switchfully.parksharkfisher.service.DivisionService;

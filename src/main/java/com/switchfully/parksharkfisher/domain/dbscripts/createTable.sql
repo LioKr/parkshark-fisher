@@ -78,6 +78,7 @@ create table members
     registration_date         date        not null,
     address_id                uuid        not null
         constraint members_address_id_fk
-            references address
+            references address,
+    membership                text
 );
 

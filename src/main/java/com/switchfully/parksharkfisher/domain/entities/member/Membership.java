@@ -1,4 +1,4 @@
-package com.switchfully.parksharkfisher.domain.entities;
+package com.switchfully.parksharkfisher.domain.entities.member;
 
 public enum Membership {
     BRONZE(0, 0, 4),
