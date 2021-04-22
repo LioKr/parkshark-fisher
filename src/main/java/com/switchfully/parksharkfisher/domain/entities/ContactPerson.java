@@ -2,6 +2,8 @@ package com.switchfully.parksharkfisher.domain.entities;
 
 import java.util.UUID;
 
+import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
+import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import javax.persistence.*;
@@ -23,7 +25,7 @@ public class ContactPerson {
     @Column(name = "emailaddress")
     private String emailAdress;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
 
@@ -31,7 +33,9 @@ public class ContactPerson {
     }
 
     public ContactPerson(String firstName, String lastName, String mobilePhone, String telephone, String emailAdress, Address address) {
-        assertValidEmailAdress(emailAdress);
+        MailAddressValidator.assertValidEmailAdress(emailAdress);
+        PhoneNumberValidator.assertValidPhoneNumber(mobilePhone);
+        PhoneNumberValidator.assertValidPhoneNumber(telephone);
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobilePhone = mobilePhone;
@@ -97,13 +101,6 @@ public class ContactPerson {
         this.address = address;
     }
 
-    private static void assertValidEmailAdress(String emailAdress) {
-        if (emailAdress == null) {
-            throw new IllegalArgumentException("Email adress is null");
-        }
-        if (!EmailValidator.getInstance().isValid(emailAdress)) {
-            throw new IllegalArgumentException("Email address is invalid");
-        }
 
-    }
 }
+

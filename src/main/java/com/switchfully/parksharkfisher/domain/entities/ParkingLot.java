@@ -6,7 +6,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "parkinglots")
 public class ParkingLot {
-//    private static int idCounter = 1;
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parkinglot_seq")
@@ -29,8 +28,6 @@ public class ParkingLot {
     private Category category;
 
     public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson, Address address, long price, Category category) {
-//        this.id = id;
-//        idCounter++;
         this.name = name;
         this.maxCapacity = maxCapacity;
         this.contactPerson = contactPerson;
