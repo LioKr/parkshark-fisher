@@ -34,10 +34,9 @@ public class Member {
     @Enumerated(EnumType.STRING)
     @Column(name = "membership")
     private Membership membership;
-
-    public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
-        new Member(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate, Membership.BRONZE);
-    }
+/*    public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
+        this(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate, Membership.BRONZE);
+    }*/
 
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate, Membership membership) {
         if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
@@ -51,7 +50,7 @@ public class Member {
         this.address = address;
         this.licensePlate = licensePlate;
         this.registrationDate = registrationDate;
-        this.membership = membership;
+        this.membership = Objects.requireNonNullElse(membership, Membership.BRONZE);
     }
 
     public Member() {
