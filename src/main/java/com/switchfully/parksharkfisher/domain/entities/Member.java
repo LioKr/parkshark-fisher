@@ -1,6 +1,7 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
 
+
 import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
 import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
 
@@ -31,6 +32,7 @@ public class Member {
     @Column(name = "registration_date")
     private LocalDate registrationDate;
 
+
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
         if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
             throw new IllegalArgumentException("Wrong argument provided");
@@ -43,6 +45,9 @@ public class Member {
         this.address = address;
         this.licensePlate = licensePlate;
         this.registrationDate = registrationDate;
+    }
+
+    public Member() {
     }
 
     private boolean validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
@@ -61,10 +66,6 @@ public class Member {
             return false;
         }
         return true;
-    }
-
-
-    public Member() {
     }
 
     public UUID getId() {
