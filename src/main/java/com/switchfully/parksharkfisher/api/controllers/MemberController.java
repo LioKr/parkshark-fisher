@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/members")
 public class MemberController {
@@ -31,6 +33,13 @@ public class MemberController {
         logger.info("Division Created: ");
         Member member = memberMapper.toEntity(memberDTOCreation);
         return memberMapper.toDTO(memberService.save(member));
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<MemberDTO> getAllMembers() {
+        logger.info("Query for all members");
+        return memberMapper.toDTOList(memberService.getAll());
     }
 
 }
