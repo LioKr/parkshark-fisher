@@ -1,5 +1,8 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
+import com.switchfully.parksharkfisher.domain.entities.member.LicensePlate;
+import com.switchfully.parksharkfisher.domain.entities.member.Member;
+import com.switchfully.parksharkfisher.domain.entities.member.Membership;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
