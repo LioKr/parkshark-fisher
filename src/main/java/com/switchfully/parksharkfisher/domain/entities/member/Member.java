@@ -37,9 +37,7 @@ public class Member {
     private Membership membership;
 
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate, Membership membership) {
-        if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
-            throw new IllegalArgumentException("Wrong argument provided");
-        }
+        validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate);
         this.id = UUID.randomUUID();
         this.firstname = firstname;
         this.lastname = lastname;
@@ -54,22 +52,27 @@ public class Member {
     public Member() {
     }
 
-    private boolean validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
+    private void validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
         MailAddressValidator.assertValidEmailAdress(mail);
         PhoneNumberValidator.assertValidPhoneNumber(phoneNumber);
-        if (firstname == null || firstname.isEmpty() || firstname.isBlank()) {
-            return false;
+        if (firstname == null) {
+            throw new IllegalArgumentException("Wrong argument provided, firstname is null");
         }
-        if (lastname == null || lastname.isEmpty() || lastname.isBlank()) {
-            return false;
+        if (firstname.isEmpty() || firstname.isBlank()) {
+            throw new IllegalArgumentException("Wrong argument provided, firstname is empty");
+        }
+        if (lastname == null) {
+            throw new IllegalArgumentException("Wrong argument provided, lastname is null");
+        }
+        if (lastname.isEmpty() || lastname.isBlank()) {
+            throw new IllegalArgumentException("Wrong argument provided, lastname is empty");
         }
         if (address == null) {
-            return false;
+            throw new IllegalArgumentException("Wrong argument provided, address is null");
         }
         if (licensePlate == null) {
-            return false;
+            throw new IllegalArgumentException("Wrong argument provided, licensePlate is null");
         }
-        return true;
     }
 
     public UUID getId() {
