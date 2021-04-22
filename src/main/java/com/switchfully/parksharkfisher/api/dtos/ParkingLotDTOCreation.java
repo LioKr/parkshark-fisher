@@ -3,6 +3,7 @@ package com.switchfully.parksharkfisher.api.dtos;
 import com.switchfully.parksharkfisher.domain.entities.Address;
 import com.switchfully.parksharkfisher.domain.entities.Category;
 import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
+import com.switchfully.parksharkfisher.domain.entities.Division;
 
 public class ParkingLotDTOCreation {
 
@@ -12,6 +13,7 @@ public class ParkingLotDTOCreation {
     private Address address;
     private long price;
     private Category category;
+    private Division division;
 
     public ParkingLotDTOCreation() {
     }
@@ -47,6 +49,15 @@ public class ParkingLotDTOCreation {
 
     public long getPrice() {
         return price;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public ParkingLotDTOCreation setDivision(Division division) {
+        this.division = division;
+        return this;
     }
 
     public ParkingLotDTOCreation setName(String name) {

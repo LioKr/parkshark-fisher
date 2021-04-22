@@ -22,7 +22,8 @@ public class ParkingLotMapper {
                 parkingLotDTOCreation.getContactPerson(),
                 parkingLotDTOCreation.getAddress(),
                 parkingLotDTOCreation.getPrice(),
-                parkingLotDTOCreation.getCategory());
+                parkingLotDTOCreation.getCategory(),
+                parkingLotDTOCreation.getDivision());
 
     }
 
@@ -34,10 +35,11 @@ public class ParkingLotMapper {
                 .setCategory(parkingLot.getCategory())
                 .setId(parkingLot.getId())
                 .setContactPerson(parkingLot.getContactPerson())
-                .setMaxCapacity(parkingLot.getMaxCapacity());
+                .setMaxCapacity(parkingLot.getMaxCapacity())
+                .setDivision(parkingLot.getDivision());
     }
 
-    public List<ParkingLotDTO> toDTOList(List<ParkingLot> parkingLotList){
+    public List<ParkingLotDTO> toDTOList(List<ParkingLot> parkingLotList) {
         logger.info("Mapping ParkingLotEntity to List of ParkingLotDTOs");
         return parkingLotList.stream().map(this::toDTO).collect(Collectors.toList());
     }

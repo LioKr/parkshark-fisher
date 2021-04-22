@@ -26,14 +26,19 @@ public class ParkingLot {
     @Enumerated(EnumType.STRING)
     @Column(name = "category")
     private Category category;
+    @ManyToOne(optional = false,cascade = CascadeType.ALL)
+    @JoinColumn(name= "division_id", nullable = false)
+    private Division division;
 
-    public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson, Address address, long price, Category category) {
+    public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson,
+                      Address address, long price, Category category, Division division) {
         this.name = name;
         this.maxCapacity = maxCapacity;
         this.contactPerson = contactPerson;
         this.address = address;
         this.price = price;
         this.category = category;
+        this.division = division;
     }
 
     public ParkingLot() {
@@ -81,6 +86,15 @@ public class ParkingLot {
 
     public Address getAddress() {
         return address;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public ParkingLot setDivision(Division division) {
+        this.division = division;
+        return this;
     }
 
     public void setAddress(Address address) {

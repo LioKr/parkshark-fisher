@@ -1,9 +1,6 @@
 package com.switchfully.parksharkfisher.service;
 
-import com.switchfully.parksharkfisher.domain.entities.Address;
-import com.switchfully.parksharkfisher.domain.entities.Category;
-import com.switchfully.parksharkfisher.domain.entities.ContactPerson;
-import com.switchfully.parksharkfisher.domain.entities.ParkingLot;
+import com.switchfully.parksharkfisher.domain.entities.*;
 import com.switchfully.parksharkfisher.domain.repositories.ParkingLotRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -38,8 +35,9 @@ class ParkingLotServiceImplementationTest {
         Address address1 = new Address("Street", "2", "3200", "Leuven");
         ContactPerson person1 = new ContactPerson("Jos", "Peters", "04949494",
                 "4567891", "jos.peters@gmail.com", address1);
+        Division division1 = new Division("Div1","origName","GM");
         List dummyParkingLotsEntityList = List.of(new ParkingLot("Parking1", 50, person1, address1, 5L,
-                Category.ABOVE_GROUND_BUILDING));
+                Category.ABOVE_GROUND_BUILDING,division1));
         Mockito.when(parkingLotRepository.findAll()).thenReturn(dummyParkingLotsEntityList);
         //WHEN
         List<ParkingLot> actual = parkingLotServiceImplementation.getAll();
