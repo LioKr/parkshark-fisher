@@ -23,8 +23,8 @@ public class Member {
     private String phoneNumber;
     @Column(name = "mail")
     private String mail;
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "address_id")
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "license_plate_platenumber", referencedColumnName = "plate_number")
@@ -34,9 +34,6 @@ public class Member {
     @Enumerated(EnumType.STRING)
     @Column(name = "membership")
     private Membership membership;
-/*    public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
-        this(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate, Membership.BRONZE);
-    }*/
 
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate, Membership membership) {
         if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
