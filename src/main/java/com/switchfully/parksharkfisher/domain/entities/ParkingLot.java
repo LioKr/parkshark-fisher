@@ -6,9 +6,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "parkinglots")
 public class ParkingLot {
-    private static int idCounter = 1;
+//    private static int idCounter = 1;
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parkinglot_seq")
+    @SequenceGenerator(name = "parkinglot_seq", sequenceName = "parkinglot_seq", initialValue = 1,allocationSize = 1)
     private int id;
     @Column(name = "name")
     private String name;
@@ -18,7 +20,7 @@ public class ParkingLot {
     @JoinColumn(name = "contactperson_id", referencedColumnName = "id")
     private ContactPerson contactPerson;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id",referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     @Column(name = "price")
     private long price;
@@ -27,8 +29,8 @@ public class ParkingLot {
     private Category category;
 
     public ParkingLot(String name, int maxCapacity, ContactPerson contactPerson, Address address, long price, Category category) {
-        this.id = idCounter;
-        idCounter++;
+//        this.id = id;
+//        idCounter++;
         this.name = name;
         this.maxCapacity = maxCapacity;
         this.contactPerson = contactPerson;
