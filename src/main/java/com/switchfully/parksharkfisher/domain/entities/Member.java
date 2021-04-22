@@ -1,7 +1,7 @@
 package com.switchfully.parksharkfisher.domain.entities;
 
 
-import com.switchfully.parksharkfisher.infrastructure.utils.MailAdressValidator;
+import com.switchfully.parksharkfisher.infrastructure.utils.MailAddressValidator;
 import com.switchfully.parksharkfisher.infrastructure.utils.PhoneNumberValidator;
 
 import javax.persistence.*;
@@ -32,8 +32,9 @@ public class Member {
     private LocalDate registrationDate;
 
     public Member(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
-        if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate))
+        if (!validateInput(firstname, lastname, phoneNumber, mail, address, licensePlate, registrationDate)) {
             throw new IllegalArgumentException("Wrong argument provided");
+        }
         this.id = UUID.randomUUID();
         this.firstname = firstname;
         this.lastname = lastname;
@@ -45,7 +46,7 @@ public class Member {
     }
 
     private boolean validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
-        MailAdressValidator.assertValidEmailAdress(mail);
+        MailAddressValidator.assertValidEmailAdress(mail);
         PhoneNumberValidator.assertValidPhoneNumber(phoneNumber);
         if (firstname == null || firstname.isEmpty() || firstname.isBlank()) {
             return false;
@@ -59,8 +60,6 @@ public class Member {
         if (licensePlate == null) {
             return false;
         }
-
-
         return true;
     }
 
