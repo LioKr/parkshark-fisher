@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class MemberMapper {
     private static final Logger logger = LoggerFactory.getLogger(MemberMapper.class);
@@ -38,5 +41,10 @@ public class MemberMapper {
                 .setRegistrationDate(member.getRegistrationDate())
                 .setMembership(member.getMembership());
 
+    }
+
+    public List<MemberDTO> toDTOList(List<Member> memberList) {
+        logger.info("Mapping Member Entity to List of MemberDTO's");
+        return memberList.stream().map(this::toDTO).collect(Collectors.toList());
     }
 }

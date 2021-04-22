@@ -35,19 +35,22 @@ create table contactpersons
 
 create table parkinglots
 (
-    id               integer
+    id               integer not null
         constraint parkinglots_pk
             primary key,
     name             varchar(25),
     maxcapacity      integer,
-    contactperson_id uuid,
-    address_id       uuid,
+    contactperson_id uuid
+        constraint parkinglots_contactpersons_id_fk
+            references contactpersons,
+    address_id       uuid
+        constraint parkinglots_address_id_fk
+            references address,
     price            bigint,
     category         text,
-    constraint parkinglots_contactpersons_id_fk
-        foreign key (contactperson_id) references contactpersons,
-    constraint parkinglots_address_id_fk
-        foreign key (address_id) references address (id)
+    division_id      uuid not null
+        constraint parkinglots_divisions_id_fk
+            references divisions(id)
 );
 
 

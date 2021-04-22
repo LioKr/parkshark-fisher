@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -20,5 +21,10 @@ class MemberServiceImplementation implements MemberService {
     @Override
     public Member save(Member member) {
         return memberRepository.save(member);
+    }
+
+    @Override
+    public List<Member> getAll() {
+        return memberRepository.findAll();
     }
 }
