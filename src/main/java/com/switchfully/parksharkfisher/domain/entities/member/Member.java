@@ -52,29 +52,6 @@ public class Member {
     public Member() {
     }
 
-    private void validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
-        MailAddressValidator.assertValidEmailAdress(mail);
-        PhoneNumberValidator.assertValidPhoneNumber(phoneNumber);
-        if (firstname == null) {
-            throw new IllegalArgumentException("Wrong argument provided, firstname is null");
-        }
-        if (firstname.isEmpty() || firstname.isBlank()) {
-            throw new IllegalArgumentException("Wrong argument provided, firstname is empty");
-        }
-        if (lastname == null) {
-            throw new IllegalArgumentException("Wrong argument provided, lastname is null");
-        }
-        if (lastname.isEmpty() || lastname.isBlank()) {
-            throw new IllegalArgumentException("Wrong argument provided, lastname is empty");
-        }
-        if (address == null) {
-            throw new IllegalArgumentException("Wrong argument provided, address is null");
-        }
-        if (licensePlate == null) {
-            throw new IllegalArgumentException("Wrong argument provided, licensePlate is null");
-        }
-    }
-
     public UUID getId() {
         return id;
     }
@@ -109,6 +86,29 @@ public class Member {
 
     public Membership getMembership() {
         return membership;
+    }
+
+    private void validateInput(String firstname, String lastname, String phoneNumber, String mail, Address address, LicensePlate licensePlate, LocalDate registrationDate) {
+        MailAddressValidator.assertValidEmailAdress(mail);
+        PhoneNumberValidator.assertValidPhoneNumber(phoneNumber);
+        if (firstname == null) {
+            throw new IllegalArgumentException("Wrong argument provided, firstname is null");
+        }
+        if (firstname.isEmpty() || firstname.isBlank()) {
+            throw new IllegalArgumentException("Wrong argument provided, firstname is empty");
+        }
+        if (lastname == null) {
+            throw new IllegalArgumentException("Wrong argument provided, lastname is null");
+        }
+        if (lastname.isEmpty() || lastname.isBlank()) {
+            throw new IllegalArgumentException("Wrong argument provided, lastname is empty");
+        }
+        if (address == null) {
+            throw new IllegalArgumentException("Wrong argument provided, address is null");
+        }
+        if (licensePlate == null) {
+            throw new IllegalArgumentException("Wrong argument provided, licensePlate is null");
+        }
     }
 
     @Override

@@ -36,24 +36,12 @@ public class Division {
         return divisionName;
     }
 
-    public void setDivisionName(String divisionName) {
-        this.divisionName = divisionName;
-    }
-
     public String getOriginalName() {
         return originalName;
     }
 
-    public void setOriginalName(String originalName) {
-        this.originalName = originalName;
-    }
-
     public String getDirector() {
         return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
     }
 
     public UUID getId() {
