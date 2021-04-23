@@ -9,4 +9,6 @@ public interface ParkingLotService {
 
 
     List<ParkingLot> getAll();
+
+    void toggleUsedSpot(ParkingLot parkingLot, int changedAmount);
 }

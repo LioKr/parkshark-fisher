@@ -9,5 +9,6 @@ public interface ParkingLotRepository extends JpaRepository<ParkingLot, UUID> {
 
 
     ParkingLot getParkingLotsByName(String parkingName);
+    ParkingLot getParkingLotById(int id);
 }
 

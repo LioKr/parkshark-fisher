@@ -26,4 +26,9 @@ public class ParkingLotServiceImplementation implements ParkingLotService {
     public ParkingLot save(ParkingLot parkingLot) {
         return parkingLotRepository.save(parkingLot);
     }
+
+    @Override
+    public void toggleUsedSpot(ParkingLot parkingLot, int changedAmount) {
+        parkingLot.changeSpotsInUse(changedAmount);
+    }
 }

@@ -12,7 +12,7 @@ public class ParkingLot {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parkinglot_seq")
-    @SequenceGenerator(name = "parkinglot_seq", sequenceName = "parkinglot_seq", initialValue = 1,allocationSize = 1)
+    @SequenceGenerator(name = "parkinglot_seq", sequenceName = "parkinglot_seq", initialValue = 1, allocationSize = 1)
     private int id;
     @Column(name = "name")
     private String name;
@@ -122,6 +122,14 @@ public class ParkingLot {
     public ParkingLot setSpotsInUse(int spotsInUse) {
         this.spotsInUse = spotsInUse;
         return this;
+    }
+
+    public boolean areThereFreeSpotsLeft() {
+        return maxCapacity - spotsInUse > 0;
+    }
+
+    public void changeSpotsInUse(int changedAmount) {
+        spotsInUse += changedAmount;
     }
 
     @Override
