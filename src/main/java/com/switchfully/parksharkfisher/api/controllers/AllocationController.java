@@ -47,7 +47,7 @@ public class AllocationController {
     @ResponseStatus(HttpStatus.CREATED)
     public AllocationDTO startAllocation(@RequestBody AllocationDTOCreation allocationDTOCreation) {
         logger.info("Parking spot allocation started: ");
-       // allocationValidator.checkAllocation(allocationDTOCreation);
+        allocationValidator.checkAllocation(allocationDTOCreation);
         Allocation allocation = allocationMapper.toEntity(allocationDTOCreation);
         Allocation savedAllocation = allocationService.save(allocation);
         parkingLotService.toggleUsedSpot(savedAllocation.getParkingLot(), 1);
