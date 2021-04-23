@@ -57,9 +57,7 @@ class AllocationControllerTest {
                 Category.ABOVE_GROUND_BUILDING, division1);
 
         List<Allocation> dummyAllocationEntityList = List.of(new Allocation(member1,
-                parkingLot1,
-                LocalDate.of(2020, 2, 1),
-                LocalDate.of(2020, 2, 2)));
+                parkingLot1));
         List<AllocationDTO> dummyAllocationDTOList = List.of(new AllocationDTO()
                 .setMember(member1)
                 .setStartTime(LocalDate.of(2020, 2, 2))
