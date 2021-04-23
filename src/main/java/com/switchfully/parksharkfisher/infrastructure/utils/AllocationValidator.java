@@ -40,10 +40,11 @@ public class AllocationValidator {
         }
     }
 
+    //
     private void checkIfLicenscePlateMatches(AllocationDTOCreation allocationDTOCreation, Member memberToCheck) {
-        if (!(memberToCheck.getLicensePlate().getLicensePlateNumber().equals(allocationDTOCreation.getLicensePlateNumber())
-                && memberToCheck.getMembership().equals(Membership.GOLD))) {
-            throw new IllegalArgumentException("The provided license plate doesn't belong to this member");
+        if (!memberToCheck.getLicensePlate().getLicensePlateNumber().equals(allocationDTOCreation.getLicensePlateNumber())) {
+            if (!memberToCheck.getMembership().equals(Membership.GOLD))
+                throw new IllegalArgumentException("The provided license plate doesn't belong to this member");
         }
     }
 
