@@ -5,6 +5,8 @@ import com.switchfully.parksharkfisher.domain.repositories.AllocationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Transactional
 @Service
 
@@ -18,5 +20,10 @@ public class AllocationServiceImplementation implements AllocationService {
     @Override
     public Allocation save(Allocation allocation) {
         return allocationRepository.save(allocation);
+    }
+
+    @Override
+    public List<Allocation> getAll() {
+        return allocationRepository.findAll();
     }
 }

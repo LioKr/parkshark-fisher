@@ -1,6 +1,7 @@
 package com.switchfully.parksharkfisher.api.controllers;
 
 import com.switchfully.parksharkfisher.api.dtos.allocation.AllocationDTO;
+import com.switchfully.parksharkfisher.api.dtos.allocation.AllocationDTO;
 import com.switchfully.parksharkfisher.api.dtos.allocation.AllocationDTOCreation;
 import com.switchfully.parksharkfisher.api.mappers.AllocationMapper;
 import com.switchfully.parksharkfisher.domain.entities.Allocation;
@@ -10,7 +11,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/allocations")
@@ -24,6 +33,14 @@ public class AllocationController {
         this.allocationService = allocationService;
         this.allocationMapper = allocationMapper;
         this.allocationValidator = allocationValidator;
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<AllocationDTO> getAllAllocations() {
+        logger.info("Query for all Allocations: ");
+       return allocationMapper.toDTOList(allocationService.getAll());
+
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
