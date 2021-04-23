@@ -7,20 +7,11 @@ import java.time.LocalDate;
 
 public class AllocationDTOCreation {
 
-    private LocalDate startTime;
-    private LocalDate stopTime;
     private Member member;
     private ParkingLot parkingLot;
+    private String licensePlateNumber;
 
     public AllocationDTOCreation() {
-    }
-
-    public LocalDate getStartTime() {
-        return startTime;
-    }
-
-    public LocalDate getStopTime() {
-        return stopTime;
     }
 
     public Member getMember() {
@@ -31,13 +22,12 @@ public class AllocationDTOCreation {
         return parkingLot;
     }
 
-    public AllocationDTOCreation setStartTime(LocalDate startTime) {
-        this.startTime = startTime;
-        return this;
+    public String getLicensePlateNumber() {
+        return licensePlateNumber;
     }
 
-    public AllocationDTOCreation setStopTime(LocalDate stopTime) {
-        this.stopTime = stopTime;
+    public AllocationDTOCreation setLicensePlateNumber(String licensePlateNumber) {
+        this.licensePlateNumber = licensePlateNumber;
         return this;
     }
 

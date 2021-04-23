@@ -28,11 +28,10 @@ public class Allocation {
     public Allocation() {
     }
 
-    public Allocation(Member member, ParkingLot parkingLot, LocalDate startTime, LocalDate stopTime) {
+    public Allocation(Member member, ParkingLot parkingLot) {
         this.member = member;
         this.parkingLot = parkingLot;
-        this.startTime = startTime;
-        this.stopTime = stopTime;
+        this.startTime = LocalDate.now();
     }
 
     public long getId() {

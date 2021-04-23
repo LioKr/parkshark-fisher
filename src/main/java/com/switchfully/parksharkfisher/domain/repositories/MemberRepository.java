@@ -7,4 +7,5 @@ import java.util.UUID;
 
 public interface MemberRepository extends JpaRepository<Member, UUID> {
     Member getMemberByMail(String mail);
+    Member getMemberById(UUID id);
 }

@@ -17,9 +17,7 @@ public class AllocationMapper {
     public Allocation toEntity(AllocationDTOCreation allocationDTOCreation) {
         logger.info("Mapping AllocationDTOCreation to Allocation entity");
         return new Allocation(allocationDTOCreation.getMember(),
-                allocationDTOCreation.getParkingLot(),
-                allocationDTOCreation.getStartTime(),
-                allocationDTOCreation.getStopTime());
+                allocationDTOCreation.getParkingLot());
     }
 
     public AllocationDTO toDTO(Allocation allocation) {
@@ -30,7 +28,7 @@ public class AllocationMapper {
                 .setStopTime(allocation.getStopTime());
     }
 
-    public List<AllocationDTO>toDTOList(List<Allocation>allocationList){
+    public List<AllocationDTO> toDTOList(List<Allocation> allocationList) {
         logger.info("Mapping AllocationEntity to List of AllocationDTOs");
         return allocationList.stream().map(this::toDTO).collect(Collectors.toList());
     }
